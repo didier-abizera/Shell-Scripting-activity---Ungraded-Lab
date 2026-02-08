@@ -7,7 +7,7 @@ REPORT_FILE=$VAULT_DIR/vault_report.txt
 
 # Check if vault exists
 if [ ! -d "$VAULT_DIR" ]; then
-    echo "❌ Error: secure_vault directory not found!"
+    echo "Error: secure_vault directory not found!"
     exit 1
 fi
 
@@ -31,7 +31,7 @@ for file in $VAULT_DIR/*.txt; do
         permissions=$(stat -c%a "$file")
         
         # Display file information
-        echo "📄 File: $filename" | tee -a $REPORT_FILE
+        echo " File: $filename" | tee -a $REPORT_FILE
         echo "   Size: $size bytes" | tee -a $REPORT_FILE
         echo "   Last Modified: $modified" | tee -a $REPORT_FILE
         echo "   Permissions: $permissions" | tee -a $REPORT_FILE
@@ -46,4 +46,4 @@ for file in $VAULT_DIR/*.txt; do
 done
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a $REPORT_FILE
-echo "✅ Monitoring complete! Report saved to: $REPORT_FILE" | tee -a $REPORT_FILE
+echo "Monitoring complete! Report saved to: $REPORT_FILE" | tee -a $REPORT_FILE
