@@ -16,7 +16,7 @@ fi
 
 # Header
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a $REPORT_FILE
-echo "🔍 VAULT SECURITY MONITORING REPORT" | tee -a $REPORT_FILE
+echo "VAULT SECURITY MONITORING REPORT" | tee -a $REPORT_FILE
 echo "Generated: $(date)" | tee -a $REPORT_FILE
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a $REPORT_FILE
 echo "" | tee -a $REPORT_FILE
@@ -38,7 +38,7 @@ for file in $VAULT_DIR/*.txt; do
         
         # Security check: if permissions are more open than 644
         if [ "$permissions" -gt 644 ]; then
-            echo "   ⚠️ SECURITY RISK DETECTED" | tee -a $REPORT_FILE
+            echo "SECURITY RISK DETECTED" | tee -a $REPORT_FILE
         fi
         
         echo "" | tee -a $REPORT_FILE
